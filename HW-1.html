@@ -1,0 +1,48 @@
+<html>
+<Body>
+    <h1 align="center">Shopping Cart</h1>
+    <form>
+        <table border="1">
+            <tr>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td><input type="number" id="firstQuantity"></td>
+                <td><input type="number" id="firstPrice"></td>
+                <td><input type="number" id="firstTotal"></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="secondQuantity"></td>
+                <td><input type="number" id="secondPrice"></td>
+                <td><input type="number" id="secondTotal"></td>
+            </tr>
+            <tr>
+                <td colspan="2">Total Price</td>
+                <td><input type="number" id="finalTotal"></td>
+            </tr>
+        </table>
+    </form>
+   
+    <input type="button" value="compute" onclick="compute()">
+
+    <script>
+        function compute(){
+            var q1 = document.getElementById('firstQuantity').value;
+            var p1 = document.getElementById('firstPrice').value;
+            var t1 = parseInt(q1) * parseInt(p1);
+            document.getElementById('firstTotal').innerHTML=t1;
+
+            var q2 = document.getElementById('secondQuantity').value;
+            var p2 = document.getElementById('secondPrice').value;
+            var t2 = parseInt(q2) * parseInt(p2);
+            document.getElementById('secondTotal').innerHTML=t2;
+
+            var finaltotal = parseInt(t1) + parseInt(t2);
+            document.getElementById('finalTotal').innerHTML=finaltotal;
+        }
+    </script>
+
+</Body>
+</html>
